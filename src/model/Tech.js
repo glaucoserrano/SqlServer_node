@@ -1,11 +1,12 @@
 const { Model,DataTypes } = require("sequelize");
 
-class Techs extends Model{
+class Tech extends Model{
     static init (sequelize){
         super.init({
             name: DataTypes.STRING,
         },{
-            sequelize
+            sequelize,
+            tableName: 'techs',
         })
     }
 
@@ -15,4 +16,4 @@ class Techs extends Model{
 }
 
 
-module.exports = Techs;
+module.exports = Tech;
