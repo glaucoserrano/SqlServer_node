@@ -6,7 +6,7 @@ module.exports = {
     async index(req,res){
         const {user_id} = req.params;
         const user = await User.findByPk(user_id,{
-            include: { association:'techs' }
+            include: { association:'techs', attributes: ['name'] , through: { attributes :[]}}
             });
 
         return res.json(user.techs);
